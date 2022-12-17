@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hahmlet", sans-serif;
+}
+
+/* Start Navigation Bar Styling */
+
+.nav {
+    background-color: rgba(199, 161, 12, 0.836);
+    letter-spacing: 2px;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    padding: 10px;
+    font-size: 22px;
+}
+
+.nav-list {
+    list-style-type: none;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.list-item {
+    display: inline-block;
+    padding: 20px;
+}
+
+.list-item a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+.list-item a:hover {
+    border-bottom: 2px solid rgba(104, 86, 17, 0.836);
+}
+
+.active {
+    border-bottom: 2px solid rgba(104, 86, 17, 0.836);
+}
+
+/* End Navigation Bar Styling */
+
+/* Start Header Styling */
+
+.header-container {
+    display: flex;
+}
+
+.header-image {
+    width: 60%;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-text {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Start Main Styling */
+
+.main-container {
+    text-align: center;
+    padding: 50px;
+    background-color: black;
+    color: rgba(199, 161, 12, 0.836);
+
+}
+
+.main-container>* {
+    padding-bottom: 30px;
+}
+
+.main-container p {
+    padding: 20px;
+}
+
+/* End Main Styling */
+
+/* Start Footer Styling */
+
+.footer-container {
+    /* Min-height to remove the white space under the footer solution found in https://stackoverflow.com/questions/34188161/remove-white-space-below-footer */
+    min-height: 75px;
+    background-color: rgba(199, 161, 12, 0.836);
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: black;
+    font-size: 30px;
+    padding: 20px;
+}
+
+/* End Footer Styling */
+
+/* Start Gallery Page Styling */
+
+/* Use a responsive grid layout to display the images */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Add some hover effects and transitions */
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+    transition: transform 0.2s ease-in-out;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+}
+
+/* Set the background color of the main element to black */
+main {
+    background-color: black;
+}
+
+/* End Gallery Page Styling */
+
+/* Start Sign Up Page Styling */
+
+.signup-background {
+    background: url("../images/background-img-min.jpg");
+    background-size: cover;
+    background-position: 10%;
+    height: 85vh;
+    text-align: center;
+}
+
+.signup-container {
+    color: rgba(199, 161, 12, 0.836);
+    background-color: rgba(5, 5, 5, 0.9);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    border-radius: 10%;
+    padding: 30px;
+}
+
+.signup-form {
+    padding: 30px;
+}
+
+.signup-form h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    /* Use the vw unit for the font size */
+}
+
+.signup-input-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+label {
+    padding-right: 5px;
+    width: 130px;
+    display: inline-block;
+}
+
+.input {
+    flex: 1;
+    height: 40px;
+    border: 2px solid rgba(199, 161, 12, 0.836);
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 0 10px;
+}
+
+/* End Sign Up Page Styling */
+
+/* Button Styling */
+
+.join-button {
+    border-radius: 15%;
+    padding: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.join-button:hover {
+    background-color: rgba(199, 161, 12, 0.836);
+    color: white;
+}
+
+/* Media Query for Larger Screens than 1500 */
+@media screen and (min-width: 1500px) {
+
+    body {
+        font-size: 1.3rem;
+    }
+
+    /* SignUp Styling */
+    .signup-container {
+        width: 800px;
+    }
+
+    label {
+        width: 200px;
+    }
+}
+
+
+/* Media Query for Smaller Screens than 900px */
+
+/* Make the sign up form more compact on smaller screens */
+@media only screen and (max-width: 600px) {
+    .signup-container {
+        width: 90%;
+        height: 70%;
+    }
+
+    .signup-form h2 {
+        font-size: 1.5em;
+    }
+
+    .input {
+        font-size: 0.8em;
+    }
+
+    .join-button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Stack the input fields vertically on smaller screens */
+@media only screen and (max-width: 600px) {
+    .signup-input-container {
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 10px;
+    }
+
+    .input {
+        margin-bottom: 20px;
+    }
+}
+
+/* Media Query for Larger Screens than 1500 */
+@media screen and (min-width: 1500px) {
+    body {
+        font-size: 1.3rem;
+    }
+
+    /* SignUp Styling */
+    .signup-container {
+        width: 800px;
+    }
+
+    label {
+        width: 200px;
+    }
+}
+
+/* Media Query for Smaller Screens than 900px */
+@media screen and (max-width: 900px) {
+
+    /* Nav Bar Styling */
+    .nav {
+        flex-direction: column;
+        height: 120px;
+        padding-bottom: 30px;
+    }
+
+    .list-item {
+        padding: 5px;
+        padding-bottom: 30px;
+    }
+
+    /* Header Styling */
+    .header-container {
+        flex-direction: column;
+    }
+
+    .header-image {
+        width: 100%;
+    }
+
+    .header-text {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Gallery Styling */
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-image {
+        padding-bottom: 20px;
+    }
+
+    /* Sign up */
+    .signup-container {
+        width: 90%;
+    }
+
+    .signup-form h2 {
+        font-size: 1.5em;
+    }
+
+    .input {
+        font-size: 0.8em;
+    }
+
+    .join-button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Media Query for Smaller Screens than 490px */
+@media screen and (max-width: 600px) {
+
+    /* Nav Bar Styling */
+    .nav {
+        height: 100px;
+    }
+
+    .logo {
+        padding: 5px;
+    }
+
+    .nav-list {
+        padding: 5px 5px;
+        font-size: 15px;
+    }
+
+    /* Main Styling */
+    .main-container {
+        padding: 20px 5px 20px 5px;
+    }
+
+    .main-container p {
+        text-align: justify;
+    }
+}
